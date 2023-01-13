@@ -1,10 +1,13 @@
 import { useState } from "react";
+import {useDispatch} from "react-redux";
+import {add} from "../../todoReducer";
 
 function ToDoForm() {
   const [todo, setTodo] = useState("");
-
+  const dispatch = useDispatch();
   function handleCreate() {
     console.log(todo);
+    dispatch(add(todo));
   }
 
   return (
