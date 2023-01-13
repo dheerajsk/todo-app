@@ -1,14 +1,17 @@
-import { useState } from "react";
+
+import {useSelector} from "react-redux";
 import "./ToDoList.css";
+import { todoSelector } from "../../todoReducer";
 
 function ToDoList() {
-  const [todos, setToDos] = useState(["Call the Client", "Attend Meeting"]);
+  // get the data from the store.
+  const values = useSelector(todoSelector)
 
   return (
     <div>
       <h4>ToDo List</h4>
       <ol>
-        {todos.map((t) => (
+        {values.map((t) => (
           <li>{t}</li>
         ))}
       </ol>

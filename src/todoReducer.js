@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 // Data or State.
 const initialState={
-    value:[]
+    value:["Call the Client", "Attend Meeting"]
 }
 
 export const todoSlice = createSlice({
@@ -15,7 +15,10 @@ export const todoSlice = createSlice({
             console.log(state.value);
         }
     }
-})
+});
+
+// Selector to get data from store.
+export const todoSelector = (state)=> state.todo.value;
 
 export const {add} = todoSlice.actions;
 
